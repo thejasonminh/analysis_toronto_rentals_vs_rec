@@ -1,3 +1,5 @@
+set.seed(432)
+
 #### Simulating 3 datasets:
 # 1) No. of apartments built between 2015-2022
 # 2) No. of bike paths built between 2015-2022
