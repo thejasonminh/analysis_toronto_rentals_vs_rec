@@ -20,7 +20,7 @@ apartment_data <- filter(datastore_resources, row_number()==1) %>% get_resource(
 ##write the apartments data as a csv within inputs/data folder
 write.csv(apartment_data, "/cloud/project/Inputs/data/raw_apartment_data.csv", row.names = FALSE)
 
-##next, downloading the Parks and Recreational Projects dataset
+##next, downloading the Cycling Network dataset
 #get package
 package2 <- show_package("cycling-network")
 package2
