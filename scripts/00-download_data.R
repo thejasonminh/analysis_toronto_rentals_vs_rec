@@ -21,23 +21,21 @@ apartment_data <- filter(datastore_resources, row_number()==1) %>% get_resource(
 write.csv(apartment_data, "/cloud/project/Inputs/data/raw_apartment_data.csv", row.names = FALSE)
 
 ##next, downloading the Parks and Recreational Projects dataset
-
-# get package
-package_2 <- show_package("park-and-recreation-facility-projects")
-package_2
+#get package
+package2 <- show_package("cycling-network")
+package2
 
 # get all resources for this package
-resources_2 <- list_package_resources("park-and-recreation-facility-projects")
+resources2 <- list_package_resources("cycling-network")
 
 # identify datastore resources; by default, Toronto Open Data sets datastore resource format to CSV for non-geospatial and GeoJSON for geospatial resources
-datastore_resources_2 <- filter(resources_2, tolower(format) %in% c('csv', 'geojson'))
+datastore_resources2 <- filter(resources2, tolower(format) %in% c('csv', 'geojson'))
 
 # load the first datastore resource as a sample
-parks_n_rec_data <- filter(datastore_resources_2, row_number()==1) %>% get_resource()
+bike_data <- filter(datastore_resources2, row_number()==1) %>% get_resource()
+bike_data
 
-
-##write the parks n rec projects data as a csv within inputs/data folder
-write.csv(parks_n_rec_data, "/cloud/project/Inputs/data/raw_pnr_data.csv", row.names = FALSE)
+write.csv(bike_data, "/cloud/project/Inputs/data/raw_bike_data.csv", row.names = FALSE)
 
 ##downloading dataset for development applications
 
