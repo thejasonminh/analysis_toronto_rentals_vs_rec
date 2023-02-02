@@ -49,7 +49,7 @@ The relevant variables that the analysis is concerned with is the unique id, whi
 #| fig-cap: Number of apartments built from 2015 to 2022
 
 library("tidyverse")
-cleaned_apartment_data |> ggplot() + geom_col(aes(x=year_built, y=Count)) + theme_minimal() + labs(x = "Year Built", y = "Number Built")
+cleaned_apartment_data |> ggplot(aes(x=year_built, y=Count, fill=Count)) + geom_col() + theme_minimal() + labs(x = "Year Built", y = "Number Built") + scale_fill_gradient(low = "#E68e90", high = "#E8090e")
 ```
 
 From 2015 to 2019, there were 65 apartment buildings built @odtcitation]. However, when the COVID-19 pandemic hit in 2020 the amount of apartment units built decreased heavily, with only 4 buildings built in 2020, 6 buildings built in 2021 and 3 buildings built in 2022.
@@ -67,7 +67,7 @@ Similar to the apartments data set, the variables of concern are the unique id a
 #| fig-cap: Number of installed cycling paths from 2015 to 2022
 
 library("tidyverse")
-cleaned_bike_data |> ggplot() + geom_col(aes(x=Year_Installed, y=Count)) + theme_minimal() + labs(x = "Year Installed", y = "Number Installed")
+cleaned_bike_data |> ggplot(aes(x=Year_Installed, y=Count, fill=Count)) + geom_col() + theme_minimal() + labs(x = "Year Installed", y = "Number Installed") + scale_fill_gradient(low = "#Aaa8d6", high = "#160ed2")
 ```
 
 The pandemic years of 2020 and 2021 saw a high amount of cycling paths installed in comparison to 2019. The biggest thing to note however, is the dramatic drop off in cycling paths installed in 2022, which was also when the pandemic ended. 
@@ -96,7 +96,7 @@ cleaned_applications_data <- cleaned_applications_data |>
         "Final Approval Completed" = "Final Approved",
       )
   )
-cleaned_applications_data |> ggplot() + geom_col(aes(x=status, y=Count)) + theme_minimal() + labs(x = "Application Status", y = "Number of Applications")
+cleaned_applications_data |> ggplot(aes(x=status, y=Count, fill=Count)) + geom_col() + theme_minimal() + labs(x = "Application Status", y = "Number of Applications") + scale_fill_gradient(low = "#A7eca7", high = "#10f310")
 ```
 
 The majority of applications fall under the "Draft Approved" category and the "Under Review" category. This means there are at least 50 new large-scale condominiums that will be built in the future.
