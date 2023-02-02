@@ -49,7 +49,7 @@ The relevant variables that the analysis is concerned with is the unique id, whi
 #| fig-cap: Number of apartments built from 2015 to 2022
 
 library("tidyverse")
-cleaned_apartment_data |> ggplot() + geom_col(aes(x=year_built, y=Count)) + theme_minimal()
+cleaned_apartment_data |> ggplot() + geom_col(aes(x=year_built, y=Count)) + theme_minimal() + labs(x = "Year Built", y = "Number Built")
 ```
 
 From 2015 to 2019, there were 65 apartment buildings built @odtcitation]. However, when the COVID-19 pandemic hit in 2020 the amount of apartment units built decreased heavily, with only 4 buildings built in 2020, 6 buildings built in 2021 and 3 buildings built in 2022.
@@ -67,7 +67,7 @@ Similar to the apartments data set, the variables of concern are the unique id a
 #| fig-cap: Number of installed cycling paths from 2015 to 2022
 
 library("tidyverse")
-cleaned_bike_data |> ggplot() + geom_col(aes(x=Year_Installed, y=Count)) + theme_minimal()
+cleaned_bike_data |> ggplot() + geom_col(aes(x=Year_Installed, y=Count)) + theme_minimal() + labs(x = "Year Installed", y = "Number Installed")
 ```
 
 The pandemic years of 2020 and 2021 saw a high amount of cycling paths installed in comparison to 2019. The biggest thing to note however, is the dramatic drop off in cycling paths installed in 2022, which was also when the pandemic ended. 
@@ -96,16 +96,22 @@ cleaned_applications_data <- cleaned_applications_data |>
         "Final Approval Completed" = "Final Approved",
       )
   )
-cleaned_applications_data |> ggplot() + geom_col(aes(x=status, y=Count)) + theme_minimal()
+cleaned_applications_data |> ggplot() + geom_col(aes(x=status, y=Count)) + theme_minimal() + labs(x = "Application Status", y = "Number of Applications")
 ```
 
 The majority of applications fall under the "Draft Approved" category and the "Under Review" category. This means there are at least 50 new large-scale condominiums that will be built in the future.
 
 # 3 Results
 
-TALK ABOUT APARTMENT BUILDINGS VS CYCLING PATHS HERE, TRY TO DO 1 OR 2 PARAGRAPHS. TALK ABOUT PRIORITY SHIFT
+@fig-apartments shows the big decrease in apartments built during the pandemic years. Clearly, the prioritization on accommodating new residents fell down the ladder during the pandemic years. @fig-cycling shows that there was a big increase in cycling paths during the pandemic years in comparison to 2019. The data shows that building cycling paths for the current residents of Toronto became a higher priority for the city, but why cycling in particular? 
 
 As the population of Toronto has been steadily increasing, so too has interest in cycling. There was a record-breaking 23% jump in Bike Share users from 2020 to 2021 (@torcyclecite) and 256 new cycling paths built from 2015 to 2022. There also has been a slow transition to having bike lanes on major roads. One of the biggest benefits of cycling, especially during the pandemic, is that its an activity that can be enjoyed whilst adhering to quarantine protocols, as you can realistically practice social distancing whilst cycling. The city of Toronto realized this, and shifted their focus on building apartments to building new cycling paths. The effort that was put into construction was instead put into building cycling paths, with 43 new paths built in 2020 and 40 new paths built in 2021. Compare those numbers to the 12 new paths that were built in 2019.
+
+However, since the end of the pandemic, the data shows that the prioritization of cycling paths has dramatically fallen down the ladder, with only 5 cycling paths installed in 2022. So where did the prioritization go again? The answer lies in @fig-applications, where 50 applications for new condominiums have been approved, and even more applications are under review. The city seems to be preparing for a big influx of new residents. Where are these new residents coming from?
+
+@residentcite tells us that while many Greater Toronto Area residents are fleeing, their numbers are being replaced by a record amount of immigrants. Another source of new residents are workers that once enjoyed the convenience of work from home that are now being forced to go back to the office. Lastly, another source of new residents are students: Universities are abolishing remote learning systems and welcoming back students to in-person learning. This means newly accepted students and students that were learning remotely in 2020 and 2021 are now having to find housing.
+
+# 4 Conclusion
 
 Before the pandemic, the city of Toronto was focused on building large-size apartment complexes to house the growing population. During the pandemic, the city of Toronto shifted their focus from apartments to satisfying the already-existing quarantined population by growing the amount of bike paths around the city. What about after the pandemic? We seem to be in the middle of another priority shift, with only 5 new bike paths built in 2022. From the 49 draft-approved apartment complex plans and the 56 other application under review (@odtcitation), the city of Toronto seems to be putting its focus back on building apartment complexes for the ever-growing population.
 
