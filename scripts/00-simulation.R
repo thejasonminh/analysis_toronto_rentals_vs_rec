@@ -39,5 +39,3 @@ sample_appl_set |> min()
 sample_apt_set |> max()
 sample_bike_set |> max()
 sample_appl_set |> max()
-
-

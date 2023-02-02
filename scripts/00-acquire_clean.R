@@ -21,7 +21,7 @@ cleaned_apartment_data <- count(cleaned_apartment_data, year_built)
 cleaned_apartment_data <- cleaned_apartment_data |> rename(Count = n)
 
 ##write this data as a CSV to be read in the quarto doc
-write.csv(cleaned_apartment_data, "/cloud/project/Outputs/cleaned_aptment_data.csv", row.names = FALSE)
+write.csv(cleaned_apartment_data, "/cloud/project/Inputs/data/cleaned_aptment_data.csv", row.names = FALSE)
 
 
 ###Getting the bike data. What I am looking for is the id and year installed###
@@ -48,7 +48,7 @@ cleaned_bike_data <- sf::st_set_geometry(cleaned_bike_data, NULL)
 cleaned_bike_data <- cleaned_bike_data |> rename(Count = n)
 
 ##write this data as a CSV to be read in the quarto doc
-write.csv(cleaned_bike_data, "/cloud/project/Outputs/cleaned_bike_data.csv", row.names = FALSE)
+write.csv(cleaned_bike_data, "/cloud/project/Inputs/data/cleaned_bike_data.csv", row.names = FALSE)
 
 
 ###Getting the applications data. What I am looking for is the id, condo applications and status of applications###
@@ -83,4 +83,4 @@ cleaned_applications_data <- count(cleaned_applications_data, status)
 cleaned_applications_data <- cleaned_applications_data |> rename(Count = n)
 
 ##write this data as a CSV to be read in the quarto doc
-write.csv(cleaned_applications_data, "/cloud/project/Outputs/cleaned_applications_data.csv", row.names = FALSE)
+write.csv(cleaned_applications_data, "/cloud/project/Inputs/data/cleaned_applications_data.csv", row.names = FALSE)

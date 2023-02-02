@@ -1,0 +1,34 @@
+---
+title: "A Shift In Construction Priorities Caused by the Pandemic"
+author: "Jason Ngo"
+date: "February 1, 2023"
+abstract: "The COVID-19 Pandemic forced the world to rethink everything about how people lived their lives as quarantine regulations were brought into play. The city of Toronto had to redo their construction priorities as it's citizens were dealing with the lockdown. This report will analyze the shift in those construction priorities through a comparison of the amount of apartment buildings built from 2015-2022 and the amount of cycling paths built from 2015-2022. What was noted was a staggering drop in completed apartment buildings done during the pandemic and subsequently a rise of cycling paths completed during the pandemic. Another note was the massive decrease in finished cycling paths in 2022. To accomodate their quarantined citizens, the City of Toronto shifted construction focus from apartment buildings to cycling paths; encouraging an activity anyone could safely enjoy in isolation. However the end of the pandemic brought a reversal of the initial priority shift: There was drastically less cycling paths built in 2022 and from the amount of current condominium development applications, the City of Toronto seems to be refocusing on building large-scale housing."
+format: pdf
+bibliography: bibliography.bib
+---
+```{r}
+#| echo: false
+#| message: false
+
+#Initializing libraries and variables to be used.
+library("tidyverse")
+library("janitor")
+library("knitr")
+
+cleaned_bike_data <- read.csv("/cloud/project/Inputs/data/cleaned_bike_data.csv")
+cleaned_applications_data <- read.csv("/cloud/project/Inputs/data/cleaned_applications_data.csv")
+cleaned_apartments_data <- read.csv("/cloud/project/Inputs/data/cleaned_aptment_data.csv")
+```
+
+
+# 1 Introduction
+
+# 2 Data
+
+# 3 Results
+
+# 4 Discussion
+
+# 5 Conclusion
+
+# References
