@@ -2,7 +2,7 @@
 title: "A Shift In Construction Priorities Caused by the Pandemic"
 author: "Jason Ngo"
 date: "February 1, 2023"
-abstract: "The COVID-19 Pandemic forced the world to rethink everything about how people lived their lives as quarantine regulations were brought into play. The city of Toronto had to redo their construction priorities as it's citizens were dealing with the lockdown. This report will analyze the shift in those construction priorities through a comparison of the amount of apartment buildings built from 2015-2022 and the amount of cycling paths built from 2015-2022. What was noted was a staggering drop in completed apartment buildings done during the pandemic and subsequently a rise of cycling paths completed during the pandemic. Another note was the massive decrease in finished cycling paths in 2022. To accomodate their quarantined citizens, the City of Toronto shifted construction focus from apartment buildings to cycling paths; encouraging an activity anyone could safely enjoy in isolation. However the end of the pandemic brought a reversal of the initial priority shift: There was drastically less cycling paths built in 2022 and from the amount of current condominium development applications, the City of Toronto seems to be refocusing on building large-scale housing."
+abstract: "The city of Toronto had to redo their construction priorities as it's citizens were dealing with the COVID-19 pandemic. This report will analyze the shift in those construction priorities through a comparison of the amount of apartment buildings built from 2015-2022 and the amount of cycling paths built from 2015-2022. What was noted was a staggering drop in completed apartment buildings done during the pandemic and subsequently a rise of cycling paths completed during the pandemic. Another note was the massive decrease in finished cycling paths in 2022. To accomodate their quarantined citizens, the City of Toronto shifted construction focus from apartment buildings to cycling paths; encouraging an activity anyone could safely enjoy in isolation. However the end of the pandemic brought a reversal of the initial priority shift: There was drastically less cycling paths built in 2022 and from the amount of current condominium development applications, the City of Toronto seems to be refocusing on building large-scale housing."
 format: pdf
 bibliography: bibliography.bib
 ---
@@ -22,13 +22,24 @@ cleaned_apartments_data <- read.csv("/cloud/project/Inputs/data/cleaned_aptment_
 
 
 # 1 Introduction
+The COVID-19 pandemic shook the world to its core. The entire world had to rethink about how they went about their daily lives with social distancing, quarantining and work-from-home policies coming into the forefront. Cities all over the globe had to adjust their priorities to focus on the well-being of the citizens. The city of Toronto was no exception to this, and they had to adjust their priorities to focus on the nigh-impossible task of balancing the health of their citizens and dealing with the common problems that comes with being one of the biggest metropolitan cities in the world.
+
+The population of Toronto has been steadily increasing over the years, with a combined 9.51% population growth over the last 8 years [@torpopcite]. How could a city readily house the vast number of new residents that were coming in year after year? The answer lies in the efficiency of large-scale apartment or condominium buildings. With a great number of floors and an even greater number of units per floor, these sky-piercing buildings are the answer to a growing population problem in a large city. However, during the pandemic, the amount of apartment buildings drastically decreased. Where did the construction go?
+
+In the following paper, data from opendatatoronto (@odtcitation) was used to analyze the amount of apartment buildings built from 2015 - 2022 with the amounts that occurred within pre pandemic, during the pandemic and post pandemic times noted carefully. The paper also used more data from opendatatoronto (@odtcitation) to analyze the amount of cycling paths built from 2015 - 2022, with care taken to scrutinize the amounts built in the pre, during and post pandemic eras. The relationship between these two data sets is discussed to figure out where the pandemic construction effort went to.
+
+The analysis will be carried out in R (@rcitation), with reliance on the tidyverse (@tidycitation), the dplyr (@dplycite), the sf (@sfcite) and the janitor (@jancitation) libraries to carry out the data manipulation and cleaning. The figures in the paper will be generated using ggplot2 (@ggcite).
+
+The paper then discusses the shifting in priority of construction efforts for the city of Toronto based on the pandemic era. Before the pandemic, to accommodate an ever-rising population, the city of Toronto focused on building apartment complexes. During the pandemic, to accommodate the quarantined populated, the city of Toronto focused on building cycling paths. After the pandemic, the focus reverted back towards the ever-rising population with the existence of several approved and under-review applications of new apartment buildings.
 
 # 2 Data
 
+From 2015 to 2019, there were 65 apartment buildings built and 13812 units created [@odtcitation]. However, when the COVID-19 pandemic hit, the amount of apartment units built decreased heavily, with only 4 buildings built in 2020, 6 buildings built in 2021 and 3 buildings built in 2022. Where did the construction go?
+
 # 3 Results
 
-# 4 Discussion
+As the population of Toronto has been steadily increasing, so too has interest in cycling. There was a record-breaking 23% jump in Bike Share users from 2020 to 2021 (@torcyclecite) and 256 new cycling paths built from 2015 to 2022. There also has been a slow transition to having bike lanes on major roads. One of the biggest benefits of cycling, especially during the pandemic, is that its an activity that can be enjoyed whilst adhering to quarantine protocols, as you can realistically practice social distancing whilst cycling. The city of Toronto realized this, and shifted their focus on building apartments to building new cycling paths. The effort that was put into construction was instead put into building cycling paths, with 43 new paths built in 2020 and 40 new paths built in 2021. Compare those numbers to the 12 new paths that were built in 2019.
 
-# 5 Conclusion
+Before the pandemic, the city of Toronto was focused on building large-size apartment complexes to house the growing population. During the pandemic, the city of Toronto shifted their focus from apartments to satisfying the already-existing quarantined population by growing the amount of bike paths around the city. What about after the pandemic? We seem to be in the middle of another priority shift, with only 5 new bike paths built in 2022. From the 49 draft-approved apartment complex plans and the 56 other application under review (@odtcitation), the city of Toronto seems to be putting its focus back on building apartment complexes for the ever-growing population.
 
 # References
