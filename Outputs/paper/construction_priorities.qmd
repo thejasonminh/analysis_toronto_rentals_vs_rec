@@ -7,6 +7,7 @@ thanks: "Code and data supporting this analysis is available at: https://github.
 format: pdf
 bibliography: bibliography.bib
 ---
+
 ```{r}
 #| echo: false
 #| message: false
@@ -16,13 +17,13 @@ library("tidyverse")
 library("janitor")
 library("knitr")
 
-cleaned_bike_data <- read.csv("/cloud/project/Inputs/data/cleaned_bike_data.csv")
-cleaned_applications_data <- read.csv("/cloud/project/Inputs/data/cleaned_applications_data.csv")
-cleaned_apartment_data <- read.csv("/cloud/project/Inputs/data/cleaned_aptment_data.csv")
+cleaned_bike_data <- read_csv(here::here("Inputs/data/cleaned_bike_data.csv"), show_col_types = FALSE)
+cleaned_applications_data <- read_csv(here::here("Inputs/data/cleaned_applications_data.csv"), show_col_types = FALSE)
+cleaned_apartment_data <- read_csv(here::here("Inputs/data/cleaned_aptment_data.csv"), show_col_types = FALSE)
 ```
 
-
 # 1 Introduction
+
 The COVID-19 pandemic shook the world to its core. The entire world had to rethink about how they went about their daily lives with social distancing, quarantining and work-from-home policies coming into the forefront. Cities all over the globe had to adjust their priorities to focus on the well-being of the citizens. The city of Toronto was no exception to this, and they had to adjust their priorities to focus on the nigh-impossible task of balancing the health of their citizens and dealing with the common problems that comes with being one of the biggest metropolitan cities in the world.
 
 The population of Toronto has been steadily increasing over the years, with a combined 9.51% population growth over the last 8 years [@torpopcite]. How could a city readily house the vast number of new residents that were coming in year after year? The answer lies in the efficiency of large-scale apartment or condominium buildings. With a great number of floors and an even greater number of units per floor, these sky-piercing buildings are the answer to a growing population problem in a large city. However, during the pandemic, the amount of apartment buildings drastically decreased. Where did the construction go?
@@ -69,7 +70,7 @@ library("tidyverse")
 cleaned_bike_data |> ggplot(aes(x=Year_Installed, y=Count, fill=Count)) + geom_col() + theme_minimal() + labs(x = "Year Installed", y = "Number Installed") + scale_fill_gradient(low = "#Aaa8d6", high = "#160ed2")
 ```
 
-The pandemic years of 2020 and 2021 saw a high amount of cycling paths installed in comparison to 2019. The biggest thing to note however, is the dramatic drop off in cycling paths installed in 2022, which was also when the pandemic ended. 
+The pandemic years of 2020 and 2021 saw a high amount of cycling paths installed in comparison to 2019. The biggest thing to note however, is the dramatic drop off in cycling paths installed in 2022, which was also when the pandemic ended.
 
 ## 2.3 Condominium Applications
 
@@ -102,7 +103,7 @@ The majority of applications fall under the "Draft Approved" category and the "U
 
 # 3 Results
 
-@fig-apartments shows the big decrease in apartments built during the pandemic years. Clearly, the prioritization on accommodating new residents fell down the ladder during the pandemic years. @fig-cycling shows that there was a big increase in cycling paths during the pandemic years in comparison to 2019. The data shows that building cycling paths for the current residents of Toronto became a higher priority for the city, but why cycling in particular? 
+@fig-apartments shows the big decrease in apartments built during the pandemic years. Clearly, the prioritization on accommodating new residents fell down the ladder during the pandemic years. @fig-cycling shows that there was a big increase in cycling paths during the pandemic years in comparison to 2019. The data shows that building cycling paths for the current residents of Toronto became a higher priority for the city, but why cycling in particular?
 
 As the population of Toronto has been steadily increasing, so too has interest in cycling. There was a record-breaking 23% jump in Bike Share users from 2020 to 2021 (@torcyclecite) and 256 new cycling paths built from 2015 to 2022. There also has been a slow transition to having bike lanes on major roads. One of the biggest benefits of cycling, especially during the pandemic, is that its an activity that can be enjoyed whilst adhering to quarantine protocols, as you can realistically practice social distancing whilst cycling. The city of Toronto realized this, and shifted their focus on building apartments to building new cycling paths. The effort that was put into construction was instead put into building cycling paths, with 43 new paths built in 2020 and 40 new paths built in 2021. Compare those numbers to the 12 new paths that were built in 2019.
 
