@@ -18,7 +18,7 @@ datastore_resources <- filter(resources, tolower(format) %in% c('csv', 'geojson'
 apartment_data <- filter(datastore_resources, row_number()==1) %>% get_resource()
 
 ##write the apartments data as a csv within inputs/data folder
-write.csv(apartment_data, "/cloud/project/Inputs/data/raw_apartment_data.csv", row.names = FALSE)
+write_csv(apartment_data, here::here("Inputs/data/raw_apartment_data.csv"))
 
 ##next, downloading the Cycling Network dataset
 #get package
@@ -35,7 +35,7 @@ datastore_resources2 <- filter(resources2, tolower(format) %in% c('csv', 'geojso
 bike_data <- filter(datastore_resources2, row_number()==1) %>% get_resource()
 bike_data
 
-write.csv(bike_data, "/cloud/project/Inputs/data/raw_bike_data.csv", row.names = FALSE)
+write_csv(apartment_data, here::here("Inputs/data/raw_bike_data.csv"))
 
 ##downloading dataset for development applications
 
@@ -53,4 +53,4 @@ datastore_resources_3 <- filter(resources_3, tolower(format) %in% c('csv', 'geoj
 applications_data <- filter(datastore_resources_3, row_number()==1) %>% get_resource()
 
 ##write the applications data as a csv within inputs/data folder
-write.csv(applications_data, "/cloud/project/Inputs/data/raw_applications_data.csv", row.names = FALSE)
+write_csv(apartment_data, here::here("Inputs/data/raw_applications_data.csv"))
